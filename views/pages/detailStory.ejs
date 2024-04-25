@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link href="/styleIndex/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .book-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .book-details img {
+            max-width: 200px;
+            margin-right: 20px;
+        }
+        .book-info {
+            flex-grow: 1;
+        }
+        .book-info h2 {
+            margin-top: 0;
+        }
+        .book-info p {
+            margin: 5px 0;
+        }
+        .favorite-button {
+            text-decoration: none;
+            color: #ff0000; /* Red color for the heart icon */
+        }
+
+        .favorite-button:hover {
+            color: #cc0000; /* Darker red color when hovering over the button */
+        }
+    </style>
+    <%- include("../patials/head"); %>
+</head>
+<body>
+    <%- include('../patials/header'); %>
+    <main>
+        <div class="container_index">
+            <%- include('../patials/leftNavbar'); %>
+            <div class="main_content">
+                <div class="container">
+                    <div class="book-details">
+                        <img src="https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg" alt="Book Image">
+                        <div class="book-info">
+                            <h2><%= detail.Title%></h2>
+                            <p><strong>Author:</strong> <%= detail.Author%></p>
+                            <p><strong>Genre:</strong> <%= genres%></p>
+                            <p><strong>Published Year:</strong> <%= detail.UpdateDate%></p>
+                            <p><strong>Description:</strong> <%= detail.Title%></p>
+                            <!-- Add more information as needed -->
+                            <a href="/ChapterRead/<%= detail.ID%>" class="read-button">Read Book</a> 
+                            <a href="/AddNewFavorite/<%= detail.ID %>" style="padding-left: 20px;" class="favorite-button">
+                                <i class="fas fa-heart fa-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Additional sections for reviews, related books, etc. -->
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

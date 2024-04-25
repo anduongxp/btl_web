@@ -62,4 +62,9 @@ const User = {
   },
 };
 
-module.exports = User;
+class UserModel{
+  static userId = 0;
+  static username ="";
+}
+
+module.exports = {User , UserModel};

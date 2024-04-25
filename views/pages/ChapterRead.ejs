@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc Truyện</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        .chapter {
+            margin-bottom: 30px;
+        }
+
+        .chapter-title {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .chapter-content {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Truyện: Tên truyện của bạn</h1>
+        <% ListStory.forEach((story, index) => { %>
+            <div class="chapter">
+                <h2 class="chapter-title"><%= story.title %></h2>
+                <p class="chapter-content"><%= story.content %></p>
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
